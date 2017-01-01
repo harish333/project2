@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+sorted by name
+<div ng-repeat="p in users | orderBy:'name'">
+{{p.id}}{{p.name}}{{p.roll}}
+</div>
+</body>
+</html>
