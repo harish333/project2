@@ -30,17 +30,29 @@ app.config(function($routeProvider){
 		templateUrl:'user/fileUpload.html'
 	})
 	.when('/friendsList',{
-		controller:'FriendController',
+		controller:'friendcontroller',
 		templateUrl:'friend/listOfFriends.html'
 	})
 	.when('/pendingRequest',{
-		controller:'FriendController',
+		controller:'friendcontroller',
 		templateUrl:'friend/pendingRequest.html'
 		
 	})
-	.when('/getAllUsers',{
-		controller:'UserController',
-		templateUrl:'user/listOfUsers1.html'
+	/*.when('/getAllUsers',{
+		controller:'usercontroller',
+		templateUrl:'user/listOfUsers.html'
 		
+	})*/
+	.when('/addPost',{
+		controller:'blogcontroller',
+		templateUrl:'blog/newPost.html'
+	})
+	.when('/getAllBlogs',{
+		controller:'blogcontroller',
+		templateUrl:'blog/blogList.html'
+	})
+       .when('/getBlogDetail/:id',{
+		controller:'blogdetailcontroller',
+		templateUrl:'blog/getBlogDetail.html'
 	})
 })

@@ -17,7 +17,9 @@ import com.niit.backend.model.Friend;
 public class FriendDaoImpl implements FriendDao{
 	@Autowired
     private SessionFactory sessionFactory;
-	
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 	@Transactional
 	public List<Friend> getAllFriends(String username) {
       Session session=sessionFactory.getCurrentSession();

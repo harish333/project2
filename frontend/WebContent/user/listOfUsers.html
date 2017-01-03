@@ -15,14 +15,14 @@
 <th>Enabled</th>
 <th>IsOnline</th>
 </tr>
-<tr ng-repeat="p in users">
-<td>{{p.id}}</td>
-<td>{{p.username}}</td>
-<td>{{p.password}}</td>
-<td>{{p.email}}</td>
-<td>{{p.role}}</td>
-<td>{{p.enabled}}</td>
-<td>{{p.isonline}}</td>
+<tr ng-repeat="h in users">
+<td>{{h.id}}</td>
+<td>{{h.username}}</td>
+<td>{{h.password}}</td>
+<td>{{h.email}}</td>
+<td>{{h.role}}</td>
+<td>{{h.enabled}}</td>
+<td>{{h.isonline}}</td>
 <td><a href="#/edit/{{p.id}}">Edit</a></td>
 <td><a href="" ng-click="deletePerson(p.id)" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></a></td>
 

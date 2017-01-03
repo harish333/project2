@@ -181,8 +181,8 @@ public class UserDaoImpl implements UserDao
 		return list;
 				
 	}
-	@Override
-	public List<User> getAllUsers(User user) {
+	@Transactional
+    	public List<User> getAllUsers(User user) {
 		Session session=sessionFactory.openSession();
 		SQLQuery query=session.createSQLQuery("select * from proj2_user where username in (select username from proj2_user where username!=? minus(select to_id from friend where from_id=? union select from_id from friend where to_id=?))");
 		query.setString(0, user.getUsername());
@@ -191,7 +191,7 @@ public class UserDaoImpl implements UserDao
 		query.addEntity(User.class);
 		List<User> users=query.list();
 		System.out.println(users);
-		session.close();
+		//session.close();
 		return users;
 	}
 

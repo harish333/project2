@@ -6,7 +6,7 @@ app.factory('userservice',function($http){
 	
 	userservice.fetchAllUsers=function(){
 		console.log('entering fetchallusers in service')
-		return $http.get("http://localhost:8081/proj2backend/user")
+		return $http.get("http://localhost:8081/proj2backend")
 		.then(function(response){
 			//response is an object returened from the back end
 			//data,status,headers,statustext
@@ -42,7 +42,7 @@ app.factory('userservice',function($http){
 	
 	userservice.getAllUsers=function(){
 		console.log('entering getallusers in user service')
-		return $http.get(BASE_URL +"/getUsers")
+		return $http.get(BASE_URL +"/getAllUsers")
 	}
 	
 	userservice.friendRequest=function(username){

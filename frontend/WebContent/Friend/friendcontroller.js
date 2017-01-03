@@ -1,9 +1,8 @@
-app.controller('FriendController',function($scope,$location,friendservice){
+app.controller('friendcontroller',function($scope,$location,friendservice){
 	alert('entering friend controller')
-	$scope.friends=[];
-	$scope.pendingRequest=[]
-	$scope.friends= 
-		friendservice.getAllFriends()
+	$scope.friends;
+	$scope.pendingRequest;
+	$scope.friend= friendservice.getAllFriends()
 		.then(function(response){
 			console.log('get all Friends controller')
 			console.log(response.status)
@@ -32,7 +31,7 @@ app.controller('FriendController',function($scope,$location,friendservice){
 			console.log(response.status)
 			if(friendStatus=='A'){
 			alert('you have accepted the friend request. You and ' + fromId + " are friends");
-			$location.path('/friendsList')
+			$location.path('/listOfUsers1')
 			}
 			else{
 				alert('You have denied the friend requet')

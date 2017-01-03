@@ -1,4 +1,5 @@
-app.factory('FriendService',function($http){
+app.factory('friendservice',function($http){
+	console.log('entering friendservice')
 	var BASE_URL="http://localhost:8081/proj2backend"
 	var friendservice=this;
 	
@@ -14,5 +15,5 @@ app.factory('FriendService',function($http){
 		console.log('service - update friend request')
 		return $http.put(BASE_URL + "/updateFriendRequest/" + friendStatus +"/"+fromId)
 	}
-	return friendService;
+	return friendservice;
 })

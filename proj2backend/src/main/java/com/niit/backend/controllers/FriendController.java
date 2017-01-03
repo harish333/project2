@@ -22,11 +22,9 @@ import com.niit.backend.model.Error;
 public class FriendController {
 	@Autowired
     private FriendDao friendDao;
-
 	public FriendDao getFriendDao() {
 		return friendDao;
 	}
-
 	public void setFriendDao(FriendDao friendDao) {
 		this.friendDao = friendDao;
 	}
