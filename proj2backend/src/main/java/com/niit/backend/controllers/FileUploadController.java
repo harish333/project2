@@ -51,25 +51,25 @@ public class FileUploadController {
                 uploadFile.setData(aFile.getBytes());//image 
                 uploadFile.setUsername(user.getUsername());//login details
                 fileUploadDao.save(uploadFile);
-             /*   //select * from proj2_profie_pics where username='smith'
+                //select * from proj2_profie_pics where username='smith'
                 UploadFile getUploadFile=fileUploadDao.getFile(user.getUsername());
             	String name=getUploadFile.getFileName();
             	System.out.println(getUploadFile.getData());
             	byte[] imagefiles=getUploadFile.getData();  //image
             	try{
             		//change the path according to your workspace and the name of your project
-            		String path="G:/NIIT/Punitha/workspace/proj2backend/src/main/webapp/WEB-INF/resources/images/"+user.getUsername();
+            		String path="E:/project2/frontend/WebContent/images/"+user.getUsername();
             		File file=new File(path);
             		//file.mkdirs();
             		FileOutputStream fos = new FileOutputStream(file);
             		fos.write(imagefiles);// write the array of bytes in username file.
-            		fos.close();
+            		//fos.close();
             		}catch(Exception e){
             		e.printStackTrace();
             		}
-             }*/
+             }
                 
-         }
+         
         return "Successfully uploaded the Profile Picture";
     }
 }

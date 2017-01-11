@@ -3,10 +3,15 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body {
+    background-image: url("images/blog.jpg");
+}
+</style>
 </head>
 <body>
 <form>
-<table>
+<table class="table">
 <tr><td>Enter the title</td><td><input type="text" ng-model="blogPost.title"></td></tr>
 <tr><td>Content</td><td><textarea rows="10"  ng-model="blogPost.body"></textarea></td></tr>
 <tr><td><input type="submit" ng-click="submit()"></td></tr>

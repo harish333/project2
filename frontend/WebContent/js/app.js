@@ -2,6 +2,7 @@ var app=angular.module("myApp",['ngRoute'])
 app.config(function($routeProvider){
 	console.log('entering configuration')
 	$routeProvider
+	
 	.when('/login',{
 		controller:'usercontroller',
 		templateUrl:'user/login.html'
@@ -38,11 +39,11 @@ app.config(function($routeProvider){
 		templateUrl:'friend/pendingRequest.html'
 		
 	})
-	/*.when('/getAllUsers',{
+	.when('/getAllUsers',{
 		controller:'usercontroller',
 		templateUrl:'user/listOfUsers.html'
 		
-	})*/
+	})
 	.when('/addPost',{
 		controller:'blogcontroller',
 		templateUrl:'blog/newPost.html'
@@ -54,5 +55,9 @@ app.config(function($routeProvider){
        .when('/getBlogDetail/:id',{
 		controller:'blogdetailcontroller',
 		templateUrl:'blog/getBlogDetail.html'
+	})
+	.when('/chat',{
+		controller:'ChatCtrl',
+		templateUrl:'chat/chat.html'
 	})
 })

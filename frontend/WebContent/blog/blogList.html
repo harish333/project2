@@ -3,6 +3,11 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body {
+    background-image: url("images/blog.jpg");
+}
+</style>
 </head>
 <body>
 Search By Title:
@@ -13,7 +18,7 @@ Search By Author
 <table class="table">
 <tr><th>Recent Posts<th></tr>
 
-<tr ng-repeat="blogPost in blogPost | orderBy:'date':true | filter:search">
+<tr ng-repeat="blogPost in blogPosts | orderBy:'date':true | filter:search">
 
 <td><a href="#/getBlogDetail/{{blog.id}}">{{blogPost.title}}</a></td>
 <td>Created By : {{blogPost.createdBy.username}}</td>

@@ -20,6 +20,11 @@ import com.niit.backend.model.User;
 public class BlogDaoImpl implements BlogDao {
 	@Autowired
 private SessionFactory sessionFactory;
+	
+	
+	public BlogDaoImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
 	@Transactional
 		public List<BlogPost> getBlogPosts() {
 		Session session=sessionFactory.getCurrentSession();

@@ -7,6 +7,7 @@ com\niit\backend\test\UserTest.class
 com\niit\backend\controllers\BlogController.class
 com\niit\backend\implementation\JobDaoImpl.class
 com\niit\backend\implementation\BlogDaoImpl.class
+com\niit\backend\model\Message.class
 com\niit\backend\implementation\FileUploadDaoImpl.class
 com\niit\backend\dao\FriendDao.class
 com\niit\backend\model\UploadFile.class
@@ -16,6 +17,7 @@ com\niit\backend\test\BlogPostTest.class
 com\niit\backend\dao\BlogDao.class
 com\niit\backend\implementation\UserDaoImpl.class
 com\niit\backend\controllers\JobController.class
+com\niit\backend\model\OutputMessage.class
 com\niit\backend\model\Friend.class
 com\niit\backend\dao\UserDao.class
 com\niit\backend\model\Error.class
@@ -24,6 +26,7 @@ com\niit\backend\dao\JobDao.class
 com\niit\backend\controllers\FriendController.class
 com\niit\backend\model\BlogPost.class
 com\niit\backend\test\BlogCommentTest.class
+com\niit\backend\controllers\ChatController.class
 com\niit\backend\model\BlogComment.class
 com\niit\backend\model\Job.class
 com\niit\backend\controllers\HomeController.class

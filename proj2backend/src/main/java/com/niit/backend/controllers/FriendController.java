@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.backend.dao.FriendDao;
 import com.niit.backend.model.Friend;
 import com.niit.backend.model.User;
 import com.niit.backend.model.Error;
 
-@Controller
+@RestController
 public class FriendController {
 	@Autowired
     private FriendDao friendDao;
@@ -28,6 +29,7 @@ public class FriendController {
 	public void setFriendDao(FriendDao friendDao) {
 		this.friendDao = friendDao;
 	}
+	
 @RequestMapping(value="/getAllFriends",method=RequestMethod.GET)
 	public ResponseEntity<?> getAllFriends(HttpSession session){
 		User user=(User)session.getAttribute("user");

@@ -3,30 +3,32 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+body {
+    background-image: url("images/users.jpg");
+}
+</style>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet"  />
 </head>
 <body>
-<table class="table table-striped">
-<tr>
-<th>ID</th>
-<th>User Name</th>
-<th>Password</th>
-<th>Email</th>
-<th>Role</th>
-<th>Enabled</th>
-<th>IsOnline</th>
-</tr>
-<tr ng-repeat="h in users">
-<td>{{h.id}}</td>
-<td>{{h.username}}</td>
-<td>{{h.password}}</td>
-<td>{{h.email}}</td>
-<td>{{h.role}}</td>
-<td>{{h.enabled}}</td>
-<td>{{h.isonline}}</td>
-<td><a href="#/edit/{{p.id}}">Edit</a></td>
-<td><a href="" ng-click="deletePerson(p.id)" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></a></td>
-
-</tr>
+<h2>List of Users</h2>
+<table class="table">
+    <tr>
+		<th>USERNAME</th>
+		<th>EMAIL</th>
+		<th>ISONLINE</th>
+		<th>ROLE</th>
+	</tr>
+	<tr ng-repeat="u in users">
+		<td >{{u.username}}</td>
+		<td>{{u.email}}</td>
+		<td ng-if="u.online">Yes</td>
+		<td ng-if="!u.online">No</td>
+		<td>{{u.role}}</td>
+		<td><a href="" ng-click="friendRequest(u.username)" class="btn btn-xs btn-default" >Send Friend Request</a></td>
+	</tr>
 </table>
+<a href="#/home">Home</a>
 </body>
-</html>
+</html> 

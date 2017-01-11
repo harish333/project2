@@ -17,31 +17,33 @@ app.factory('jobservice',function($http)
 			console.log(response.status)
 			return response.status
 		})
-	}; 
+	}
 	
 	jobservice.getAllJobs=function(){
 		
 		return $http.get(BASE_URL + "/getAllJobs")
 		
-		.then(function(response){
+		/*.then(function(response){
 			//response is an object returened from the back end
 			//data,status,headers,statustext
 			//data-list of person
+			console.log('entering service sucess')
 			console.log(response.data)
 			console.log(response.status)
 			return response.data
 		},
 		function(response)
 		{
+			console.log('entering service failure')
 			console.log(response.data)
 			return response.data
-		})
+		})*/
 		
-	};
+	}
 	
 	jobservice.getJobDetail=function(jobId){
 		return $http.get(BASE_URL + "/getJobDetail/"+jobId)
-	};
+	}
 	
 	
 	return jobservice;

@@ -1,5 +1,7 @@
 app.factory('blogservice',function($http){
-	var blogService=this;
+	console.log('entering userservice')
+	
+	var blogservice=this;
 	blogservice.addPost=function(blogPost){
 		console.log('addpost in service')
 		return $http.post("http://localhost:8081/proj2backend/blog",blogPost);

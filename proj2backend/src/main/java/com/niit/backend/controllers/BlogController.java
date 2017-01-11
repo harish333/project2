@@ -24,19 +24,23 @@ import com.niit.backend.model.User;
 import com.niit.backend.model.Error;
 @RestController
 @RequestMapping("/blog")
-public class BlogController {
+public class BlogController 
+{
 	@Autowired
 private BlogDao blogDao;
+	
 	@RequestMapping(method = RequestMethod.GET, value = "/list")
 	public ResponseEntity<?> getBlogList(HttpSession session){
 		User user=(User)session.getAttribute("user");
 		if(user==null){
+			
 			Error error=new Error(1,"Unauthroized user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}
 		List<BlogPost> blogPosts=blogDao.getBlogPosts();
 		return new ResponseEntity<List<BlogPost>>(blogPosts,HttpStatus.OK);
 	}
+	
 	@RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> getBlogPost(@PathVariable(value="id") int id,HttpSession session){
 		User user=(User)session.getAttribute("user");
@@ -52,6 +56,7 @@ private BlogDao blogDao;
     public ResponseEntity<?> addBlogPost( @RequestBody BlogPost blogPost,HttpSession session) {
 		User user=(User)session.getAttribute("user");
 		if(user==null){
+			System.out.println("User is NULL.....");
 			Error error=new Error(1,"Unauthroized user");
 			return new ResponseEntity<Error>(error,HttpStatus.UNAUTHORIZED);
 		}

@@ -1,5 +1,5 @@
 app.controller('blogcontroller',function($scope,$location,blogservice){
-	$scope.blogPost={};
+	$scope.blogPost={id:'',body:'',createdon:'',title:'',create_by_id:''};
 	
 	$scope.blogPosts=[]
 	$scope.submit=function(){

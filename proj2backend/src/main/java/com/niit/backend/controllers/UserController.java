@@ -18,13 +18,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 //import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.niit.backend.dao.FileUploadDao;
 import com.niit.backend.dao.UserDao;
 import com.niit.backend.model.User;
 import com.niit.backend.model.Error;
 import com.niit.backend.model.UploadFile;
-@Controller
+@RestController
 public class UserController {
 Logger logger=LoggerFactory.getLogger(this.getClass());
 @Autowired
@@ -71,7 +72,7 @@ public ResponseEntity<?> login(@RequestBody User user,HttpSession session ){
 		return new ResponseEntity<User>(validUser,HttpStatus.OK);//200
 	}
 }*/@RequestMapping(value="/login",method=RequestMethod.POST)
-public ResponseEntity<?> login(@RequestBody User user){
+public ResponseEntity<?> login(@RequestBody User user,HttpSession session){
 	logger.debug("Entering USERCONTROLLER : LOGIN");
 	User validUser=userDao.authenticate(user);
 	if(validUser==null){
@@ -82,6 +83,7 @@ public ResponseEntity<?> login(@RequestBody User user){
 	else{
 		validUser.setOnline(true);
 		userDao.updateUser(validUser); // to update online status in db
+		session.setAttribute("user", validUser);
 		logger.debug("validUser is not null");
 		return new ResponseEntity<User>(validUser,HttpStatus.OK);//200
 	}
@@ -131,18 +133,17 @@ public ResponseEntity<?> logout(HttpSession session){
 	return new ResponseEntity<Void>(HttpStatus.OK);
 }
 @RequestMapping(value="/listOfUsers",method=RequestMethod.GET)
-public ResponseEntity<?> getAllUsers(HttpSession session){
-	User user=(User)session.getAttribute("user");
-	if(user==null)
-	return new	ResponseEntity<Error>(new Error(1,"Unauthorized user"),HttpStatus.UNAUTHORIZED);
-	else
-	{
-		List<User> users=userDao.getAllUsers(user);
-		for(User u:users)
-			System.out.println("IsONline " + u.isOnline());
+public ResponseEntity<?> getAllUsers(){
+	//User user=(User)session.getAttribute("user");
+	//if(user==null)
+	//return new	ResponseEntity<Error>(new Error(1,"Unauthorized user"),HttpStatus.UNAUTHORIZED);
+	//else
+	//{
+		List<User> users=userDao.userList();
+		//for(User u:users)
+			//System.out.println("IsONline " + u.isOnline());
 		return new ResponseEntity<List<User>>(users,HttpStatus.OK);
 	}
 }
 
 
-}

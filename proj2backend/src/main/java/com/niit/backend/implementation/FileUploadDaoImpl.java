@@ -32,8 +32,8 @@ public class FileUploadDaoImpl implements FileUploadDao {
 	public void save(UploadFile uploadFile) {
 		Session session=sessionFactory.getCurrentSession();
 		session.save(uploadFile);
-		session.flush();
-		session.close();
+		/*session.flush();
+		session.close();*/
 	}
 
 	@Override
@@ -41,8 +41,8 @@ public class FileUploadDaoImpl implements FileUploadDao {
 		Session session=sessionFactory.getCurrentSession();
 		Query query=session.createQuery("from UploadFile where username=?");
 		query.setParameter(0, username);
-        UploadFile uploadFile=(UploadFile)query.uniqueResult();
-		session.close();
+        UploadFile uploadFile=(UploadFile)query.setMaxResults(1).uniqueResult();
+		//session.close();
 		return uploadFile;
 	}
 

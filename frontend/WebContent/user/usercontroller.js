@@ -85,11 +85,12 @@ app.controller('usercontroller',function($scope,$rootScope,$location,userservice
 		alert('friendRequest in userController')
 		console.log('friendrequest function')
 		userservice.friendRequest(username)
-		.then(function(response){
+		.then(function(response)
+		{
 			console.log(response.status);
 			alert('Friend request Send')
 			getAllUsers();
-			$location.path('/getAllUsers')
+			$location.path('/listOfUsers')
 		},
 		function(response){
 			console.log(response.status);
@@ -106,7 +107,9 @@ app.controller('usercontroller',function($scope,$rootScope,$location,userservice
 		console.log(response.status)
 		console.log(response.data)
 		$scope.users=response.data
-		},function(response){
+		
+		},
+		function(response){
 			console.log(response.status)
 		}
 		)
