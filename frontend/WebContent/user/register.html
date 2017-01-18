@@ -39,10 +39,12 @@ h1 {
   margin-bottom: 10px;
 }
 
-html{
+/* html{
   background-color: #ffffff;
+} */
+body {
+    background-image: url("images/register.jpg");
 }
-
 .testbox {
   margin: 20px auto;
   width: 343px; 
@@ -50,7 +52,7 @@ html{
   -webkit-border-radius: 8px/7px; 
   -moz-border-radius: 8px/7px; 
   border-radius: 8px/7px; 
-  background-color: #ebebeb; 
+  background-color: transparent; 
   -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
   -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
   box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
@@ -58,7 +60,7 @@ html{
 }
 
 input[type=radio] {
-  visibility: hidden;
+  visibility: default;
 }
 
 form{
@@ -196,51 +198,56 @@ a.button:hover {
 <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
+<form>
 
-
-<!-- <tr><td>Username</td><td><input type="text" ng-model="user.username"></td></tr>
+ <!-- <tr><td>Username</td><td><input type="text" ng-model="user.username"></td></tr>
 <tr><td>password</td><td><input type="password" ng-model="user.password"></td></tr>
-<tr><td>email</td><td><input type="text" ng-model="user.email"></td></tr> -->
+<tr><td>email</td><td><input type="text" ng-model="user.email"></td></tr>
+ -->
 
-
-<div class="testbox">
-  <h1>Registration</h1>
+ <div class="testbox">
+  <h1><font color="skyblue">Registration</font></h1>
 
   
    <fieldset>  
   <label id="icon" for="name"><i class="icon-user"></i></label>
   <input type="text"  ng-model="user.username"placeholder="Username" required/>
+  <br>
+ 
   <label id="icon" for="name"><i class="icon-shield"></i></label>
   <input type="password"  ng-model="user.password"placeholder="Password" required/>
+  <br>
   <label id="icon" for="name"><i class="icon-envelope "></i></label>
   <input type="text" ng-model="user.email" placeholder="email" required/>
+
   </fieldset>
   <label>Select role</label>
   <br>
-  <input type="radio" ng-model="user.role" value="STUDENT"/>Student
-  <input type="radio" ng-model="user.role" value="ALUMNI"/>Alumni
-  <input type="radio" ng-model="user.role" value="EMPLOYEE"/>Employee
-<!--    <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p> -->
+  <input type="radio" ng-model="user.role" value="STUDENT"/><font color="skyblue">Student</font>
+  <input type="radio" ng-model="user.role" value="ALUMNI"/><font color="skyblue">Alumni</font>
+  <input type="radio" ng-model="user.role" value="EMPLOYEE"/><font color="skyblue">Employee</font>
+   <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
    <br>
    <button type="submit" ng-click="registerUser()" value="Register">Sign Up</button>
   
-</div>
+</div> 
 
 
 
 
-<!-- 
- Select role
+
+<!--  Select role
 <input type="radio" ng-model="user.role" value="STUDENT">Student
 <input type="radio" ng-model="user.role" value="ALUMNI">Alumni
 <input type="radio" ng-model="user.role" value="EMPLOYEE">Employee
-
  -->
+
 <!-- <button type="submit" ng-click="registerUser()" value="Register"></button> -->
 
 
 
 
 {{errorMessage}}
+</form>
 </body>
 </html>

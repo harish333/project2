@@ -29,7 +29,7 @@ app.config(function($routeProvider){
 	.when('/uploadPicture',{
 		controller:'usercontroller',
 		templateUrl:'user/fileUpload.html'
-	})
+	}) 
 	.when('/friendsList',{
 		controller:'friendcontroller',
 		templateUrl:'friend/listOfFriends.html'

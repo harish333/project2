@@ -66,7 +66,9 @@
     background-color: #555;
 }
   
-  
+  body {
+    background-image: url("images/chat.jpg");
+}
   
   </style>
 
@@ -121,7 +123,7 @@
         </div>
         <div class="info">
           <span class="count" ng-bind="max - message.length" ng-class="{danger: message.length > max}">140</span>
-          <button ng-disabled="message.length > max || message.length ===0">Send</button>
+          <button  class="btn btn-warning" ng-disabled="message.length > max || message.length ===0" >Send</button>
         </div>
       </form> 
                 </div>

@@ -9,20 +9,19 @@ body {
 }
 </style>
 </head>
-<body>
-Search By Title:
+<body><font color="skyblue">Search By Title:</font>
 <input type="text" ng-model="search.title">
-Search By Author
+<font color="skyblue">Search By Author</font>
 <input type="text" ng-model="search.createdBy.username">
 <div class="table-responsive">
 <table class="table">
-<tr><th>Recent Posts<th></tr>
+<tr><th><font color="red">Recent Posts</font><th></tr>
 
 <tr ng-repeat="blogPost in blogPosts | orderBy:'date':true | filter:search">
 
 <td><a href="#/getBlogDetail/{{blog.id}}">{{blogPost.title}}</a></td>
-<td>Created By : {{blogPost.createdBy.username}}</td>
-<td>Created On: {{blogPost.createdOn | date:'MM/dd/yyyy HH:mm'}}</td>
+<td><font color="skyblue">Created By : {{blogPost.createdBy.username}}</font></td>
+<td><font color="skyblue">Created On: {{blogPost.createdOn | date:'MM/dd/yyyy HH:mm'}}</font></td>
 
 </tr>
 </table>
